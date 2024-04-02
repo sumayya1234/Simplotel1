@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Food-court.">
+        <!-- Always include this line of code!!! -->
+        <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="style.css">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <title>OrderFood</title>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="main-nav">
+                <ul class="main-nav-list">
+                    <li>
+                        <a class="main-nav-link" href="#">H o m e</a>
+                    </li>
+                    <li>
+                        <a class="main-nav-link" href="#">O r d e r</a>
+                    </li>
+                    <li>
+                        <a class="main-nav-link" href="#">F o o d</a>
+                    </li>
+                    <li>
+                        <a class="main-nav-link" href="#">R e s t a u r a n t</a>
+                    </li>
+                    <li>
+                        <a class="main-nav-link" href="#">T e s ti m o n i a l s</a>
+                    </li>
+                    <li>
+                        <a class="main-nav-link" href="#">C o n t a c t U s</a>
+                    </li>
+                </ul>
+            </nav>
+             <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
+        </header>
+        <!-- ********************** section hero ***************************** -->
+        <section class="section-primary">
+            <div class="primary">
+                <div class="primary-text-box">
+                    <h1 class="heading-primary">
+                        LOREM IPSUM
+                    </h1>
+                    <p class="primary-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                          id est vitae dolor rhoncus tristique. Maecenas metus quam,
+                          rhoncus euismod lorem in, sollicitudin viverra eros. Donec
+                          dictum luctus quam ut tristique. Curabitur nec faucibus purus.
+                          Quisque congue sem nec justo mollis, in tincidunt erat pretium.
+                          Sed pulvinar, massa ac porta viverra.
+                    </p>
+                    <a href="#cta" class="btn btn--full margin-right-sm">
+                        Click Me
+                    </a
+            >
+                </div>
+                <div class="primary-img-box">
+                    <picture>
+                        <img src="images/pexels-robin-stickel-70497.jpg" class="primary-img" alt="food" loading="lazy">
+                    </picture>
+                </div>
+            </div>
+        </section>
+        <!-- ********************** section hero ***************************** -->
+        <!-- ********************** section hero ***************************** -->
+        <!-- <div> -->
+        <section class="section-how">
+      
+            <div class="container grid grid--2-cols grid--center-v">
+                <!-- STEP 01 -->
+                <div class="step-img-box">
+                    <img src="images/pexels-rachel-claire-6752433.jpg" class="step-img" alt=" image 1" loading="lazy">
+                    <img src="images/pexels-eva-bronzini-6141651.jpg" class="step-img" alt="image 2" loading="lazy">
+                    <img src="images/pexels-mister-mister-3434523.jpg" class="step-img" alt="image 3" loading="lazy">
+                </div>
+                <div class="step-text-box">
+                    <h3 class="heading-tertiary">
+                        LOREM IPSUM
+                    </h3>
+                    <p class="step-description">
+                        LOREM IPSUM
+                        <br>
+                        SET ADEMIR
+                    </p>
+                    <h5 style="font-size:1.4rem; color:black;font-weight: 100;">
+                        Click
+                        <img class="arrow" src="images/icons8-arrow-30.png">
+                    </h5>
+                </div>
+            </div>
+        
+        </section>
+    <!-- </div> -->
+        <script>
+///////////////////////////////////////////////////////////
+// Make mobile navigation work
+
+const btnNavEl = document.querySelector(".btn-mobile-nav");
+const headerEl = document.querySelector(".header");
+
+btnNavEl.addEventListener("click", function () {
+  headerEl.classList.toggle("nav-open");
+});
+
+///////////////////////////////////////////////////////////
+// Smooth scrolling animation
+
+const allLinks = document.querySelectorAll("a:link");
+
+allLinks.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const href = link.getAttribute("href");
+
+    // Scroll back to top
+    if (href === "#")
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+    // Scroll to other links
+    if (href !== "#" && href.startsWith("#")) {
+      const sectionEl = document.querySelector(href);
+      sectionEl.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Close mobile naviagtion
+    if (link.classList.contains("main-nav-link"))
+      headerEl.classList.toggle("nav-open");
+  });
+});
+
+
+
+        </script>
+    </body>
+</html>
+
